@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UniFeedback Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="mark">UF</div>
+      <div><h1>UniFeedback</h1><p>Assistant · Student-controlled</p></div>
+      <span class="version">v1.0</span>
+    </header>
+
+    <section class="intro">
+      <div class="intro-title">Feedback form helper</div>
+      <p>Scan the open feedback page, choose your own ratings, then review before applying.</p>
+    </section>
+
+    <section class="toolbar">
+      <button id="scanBtn" class="primary">Scan this page</button>
+      <button id="refreshBtn" class="secondary" title="Scan again">↻</button>
+    </section>
+    <div id="status" class="status" role="status">Open your feedback form in the current tab, then scan.</div>
+
+    <section id="controls" class="hidden">
+      <div class="section-heading">
+        <h2>Your rating preferences</h2>
+        <span id="count" class="count">0 fields</span>
+      </div>
+
+      <label class="field-label" for="mode">Fill mode</label>
+      <select id="mode" class="wide">
+        <option value="same">Same rating for every question</option>
+        <option value="individual">Choose each question individually</option>
+      </select>
+
+      <div id="sameRatingWrap">
+        <label class="field-label" for="sameRating">Rating to apply</label>
+        <select id="sameRating" class="wide"></select>
+      </div>
+
+      <label class="check-row"><input type="checkbox" id="onlyEmpty" checked> Only fill unanswered boxes</label>
+      <div class="notice">Your choices are applied only to detected dropdowns. The extension never submits the form.</div>
+
+      <div id="questions" class="questions"></div>
+
+      <button id="applyBtn" class="apply">Apply selected ratings</button>
+      <button id="clearBtn" class="text-button">Clear scan results</button>
+    </section>
+
+    <footer>Local-only · No account access · Review before submitting</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

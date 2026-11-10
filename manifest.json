@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "UniFeedback Assistant",
+  "version": "1.0.0",
+  "description": "A privacy-friendly helper for reviewing and filling student feedback dropdowns with your own ratings.",
+  "minimum_chrome_version": "102",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_title": "UniFeedback Assistant",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
